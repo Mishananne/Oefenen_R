@@ -30,25 +30,27 @@ require(Amelia)
 missmap(titanic.train, main="Titanic Training.csv - overzicht ontbrekende data", col=c("yellow", "black"), legend=FALSE)
 
 
+
+##Grafisch overzicht data
 barplot(table(titanic.train$Survived),
         names.arg = c("Dood", "Levend"),
         main="overlevende ", col="black")
 
 barplot(table(titanic.train$Pclass), 
-        names.arg = c("first", "second", "third"),
-        main="Pclass (passenger traveling class)", col="firebrick")
+        names.arg = c("eerste", "tweede", "derde"),
+        main="Pclass (passagier klasse)", col="firebrick")
 
-barplot(table(titanic.train$Sex), main="Sex (gender)", col="darkviolet")
+barplot(table(titanic.train$Sex), main="Geslacht", col="darkviolet")
 
-hist(titanic.train$Age, main="Age", xlab = NULL, col="brown")
+hist(titanic.train$Age, main="Leeftijd", xlab = NULL, col="brown")
 
-barplot(table(titanic.train$SibSp), main="SibSp (siblings + spouse aboard)", 
+barplot(table(titanic.train$SibSp), main="SibSp (broers en zussen + echtgenoot aanboord)", 
         col="darkblue")
 
-barplot(table(titanic.train$Parch), main="Parch (parents + kids aboard)", 
+barplot(table(titanic.train$Parch), main="Parch (ouders + kinderen aanboord)", 
         col="gray50")
 
-hist(titanic.train$Fare, main="Fare (fee paid for ticket[s])", xlab = NULL, 
+hist(titanic.train$Fare, main="Fare (bedrag voor kaartje[s])", xlab = NULL, 
      col="darkgreen")
 
 barplot(table(titanic.train$Embarked), 
